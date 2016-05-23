@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Zoopla Test</title>
+		<meta name="description" content="Hand coded (well used vi under Windows Git Bash...)" />
+		<style>
+			body {
+				font-family: "Myriad Pro", Arial, sans-serif;
+				font-size: 16px;
+				margin: 0;
+				padding: 0;
+				background-color: #5E1C63;
+			}
+			body > * {
+				background-color: #FFF;
+			}
+			a {
+				color: #5E1C63;
+				text-decoration: none;
+			}
+				a:hover {
+					text-decoration: underline;
+				}
+			header {}
+				header section {
+					border-bottom: solid 1px #5E1C63;
+				}
+					#header-top {
+						display: flex;
+						flex-direction: row;
+						flex-wrap: nowrap;
+						justify-content: space-between;
+						align-items: stretch;
+					}
+						#logo {
+							box-sizing: border-box;
+							flex-grow: 3;
+							margin: 0;
+							padding-right: 15px;
+							width: 30%;
+						}
+							#logo a {
+								border: none;
+							}
+							#logo img {
+								height: auto;
+								width: 100%;
+							}
+							#logo + * {
+								box-sizing: border-box;
+								flex-grow: 7;
+								padding-left: 15px;
+							}
+					#header-sub {}
+			nav {
+				text-align: center;
+			}
+				nav a {
+					display: inline-block;
+					padding: 15px;
+				}
+				#nav-main {
+					display: flex;
+					align-items: stretch;
+					align-content: center;
+					justify-content: flex-end;
+				}
+					#nav-main a {
+						display: flex;
+						align-items: center;
+						padding: 0 15px;
+					}
+						#nav-main a:hover {
+							text-decoration: none;
+						}
+					#nav-main a, #nav-main:hover a.active {
+						background-color: transparent;
+						color: #5E1C63;
+					}
+						#nav-main a.active {}
+						#nav-main:hover a.active {
+							background-color: transparent;
+						}
+						#nav-main a.active, #nav-main:hover a:hover {
+							background-color: #5E1C63;
+							color: #FFF;
+						}
+				#nav-sub {}
+					#nav-sub a {}
+				#nav-footer {}
+					#nav-footer a {
+						font-size: 14px;
+					}
+			main {}
+				main > section, main > article {
+					padding: 30px 0;
+				}
+			article {
+				text-align: justify;
+			}
+			footer {
+				background-color: #5E1C63;
+				color: #FFF;
+			}
+				footer a {
+					color: #FFF;
+				}
+			/**
+			 * handle margins
+			 */
+			.hm > * {
+				margin-top: 1em;
+				margin-bottom: 1em;
+			}
+				.hm > *:first-child {
+					margin-top: 0;
+				}
+				.hm > *:last-child {
+					margin-bottom: 0;
+				}
+			.cf {
+				clear: both;
+				overflow: hidden;
+			}
+			.contain {
+				box-sizing: border-box;
+				margin: auto;
+				max-width: 100%;
+				padding: 0 15px;
+				width: 640px;
+			}
+			@media screen and (max-width: 480px) {
+				header {}
+					header section {}
+						#header-top {
+							flex-wrap: wrap;	
+						}
+							#logo {
+								width: 100%;
+							}
+				nav {}
+					nav a {
+						display: block !important;
+					}
+			}
+		</style>
+	</head>
+	<body>
+		<header class="contain">
+			<section id="header-top" class="cf">
+				<h1 id="logo">
+					<a href="/">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Zoopla.jpg/320px-Zoopla.jpg" alt="Zoopla" />
+					</a>
+				</h1>
+				<nav id="nav-main">
+					<a class="active" href="/">Home</a>
+					<a href="#about">About</a>
+					<a href="#help">Help</a>
+					<a href="#events">Events</a>
+					<a href="#contact">Contact</a>
+				</nav>
+			</section>
+			<section id="header-sub" class="cf">
+				<nav id="nav-sub">
+					<a href="#link-1">Link 1</a>
+					<a href="#link-2">Link 2</a>
+					<a href="#link-3">Link 3</a>
+					<a href="#link-4">Link 4</a>
+					<a href="#link-5">Link 5</a>
+				</nav>
+			</section>
+		</header>
+		<main class="contain">
+			<article class="hm">
+				<h1>Article Heading 1</h1>
+				<p>Etiam quis elit malesuada, imperdiet dolor vitae, pellentesque
+				sem. Quisque rhoncus, metus eget hendrerit malesuada, sem mi
+				pulvinar enim, sed ullamcorper eros tortor et diam.</p>
+				<p>Phasellus euismod, erat nec laoreet condimentum, nisi tellus
+				commodo sem, eget convallis magna massa eu magna. Sed malesuada
+				odio risus, ac hendrerit dui fringilla quis.</p>
+				<h2>Article Heading 2</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+				sagittis rutrum orci at pellentesque. Etiam porta nisl et
+				mauris vestibulum, id sodales libero luctus.</p>
+				<h3>Article heading 3</h3>
+				<p>Sed felis arcu, vestibulum vitae sollicitudin sed, euismod eget
+				ipsum. Nulla ipsum purus, egestas sit amet mauris sed, molestie
+				ultricies est. Fusce viverra viverra nisl sed cursus. Praesent
+				sit amet feugiat quam. Donec at varius quam.</p>
+			</article>
+		</main>
+		<footer class="contain">
+			<nav id="nav-footer">
+				<a href="#footer-link-1">Footer Link 1</a>
+				<a href="#footer-link-2">Footer Link 2</a>
+				<a href="#footer-link-3">Footer Link 3</a>
+				<a href="#footer-link-4">Footer Link 4</a>
+				<a href="#footer-link-5">Footer Link 5</a>
+			</nav>
+		</footer>
+	</body>
+</html>
