@@ -158,6 +158,24 @@
 						display: block !important;
 					}
 			}
+			@media screen and (min-width: 960px) {
+				.js-run .contain {
+                    width: 960px;
+                }
+                .js-run main {
+                    overflow: hidden;
+                }
+                    .js-run main > * {
+                        float: left;
+                        width: 50%;
+                        box-sizing: border-box;
+                    }
+			}
+			@media screen and (min-width: 1100px) {
+				.js-run .contain {
+                    width: 1100px;
+                }
+			}
 		</style>
 	</head>
 	<body>

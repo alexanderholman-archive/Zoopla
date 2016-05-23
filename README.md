@@ -13,4 +13,4 @@ Part 1 of 3 is available as release v1.0.0
 Part 2 of 3 is available as release v2.0.0
 
 ## Part 3
-Part 3 of 3 will be available as release v3.0.0
+Part 3 of 3 is available as release v3.0.0
