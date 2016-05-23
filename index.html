@@ -92,12 +92,24 @@
 						font-size: 14px;
 					}
 			main {}
-				main > section, main > article {
+				main > section, main > * {
 					padding: 30px 0;
 				}
+                    main > section, main > *:nth-child(odd) {
+                        background-color: white;
+                    }
+                    main > section, main > *:nth-child(even) {
+                        background-color: #F9F9F9;
+                    }
 			article {
 				text-align: justify;
 			}
+            .accordion {}
+                .accordion-toggle {}
+                    .js-run .accordion-toggle {
+                        cursor: pointer;
+                    }
+                .accordion-content {}
 			footer {
 				background-color: #5E1C63;
 				color: #FFF;
@@ -126,9 +138,12 @@
 				box-sizing: border-box;
 				margin: auto;
 				max-width: 100%;
-				padding: 0 15px;
 				width: 640px;
 			}
+                .contain > * {
+                    padding-right: 15px;
+                    padding-left: 15px;
+                }
 			@media screen and (max-width: 480px) {
 				header {}
 					header section {}
@@ -190,6 +205,31 @@
 				ultricies est. Fusce viverra viverra nisl sed cursus. Praesent
 				sit amet feugiat quam. Donec at varius quam.</p>
 			</article>
+            <section class="accordion active">
+                <h3 class="accordion-toggle">Section 1</h3>
+                <div class="accordion-content hm">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis rutrum orci at pellentesque. Etiam porta nisl et mauris vestibulum, id sodales libero luctus.</p>
+                </div>
+            </section>
+            <section class="accordion">
+                <h3 class="accordion-toggle">Section 2</h3>
+                <div class="accordion-content hm">
+                    <p>Sed felis arcu, vestibulum vitae sollicitudin sed, euismod eget ipsum.</p>
+                    <p>Nulla ipsum purus, egestas sit amet mauris sed, molestie ultricies est. Fusce viverra viverra nisl sed cursus. Praesent sit amet feugiat quam. Donec at varius quam.</p>
+                </div>
+            </section>
+            <section class="accordion">
+                <h3 class="accordion-toggle">Section 3</h3>
+                <div class="accordion-content hm">
+                    <p>Etiam quis elit malesuada, imperdiet dolor vitae, pellentesque sem. Quisque rhoncus, metus eget hendrerit malesuada, sem mi pulvinar enim, sed ullamcorper eros tortor et diam.</p>
+                    </div>
+            </section>
+            <section class="accordion">
+                <h3 class="accordion-toggle">Section 4</h3>
+                <div class="accordion-content hm">
+                    <p>Nulla a ultricies orci. Suspendisse efficitur lectus nec ex bibendum feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam tempus sem et augue gravida placerat.</p>
+                </div>
+            </section>
 		</main>
 		<footer class="contain">
 			<nav id="nav-footer">
@@ -200,5 +240,30 @@
 				<a href="#footer-link-5">Footer Link 5</a>
 			</nav>
 		</footer>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+        console.log("i'm using jquery for speed, would rather finish the task");
+        var slideSpeed = 400,
+            activeClass = 'active',
+            accordionClass = '.accordion',
+            toggleClass = accordionClass+'-toggle',
+            contentClass = accordionClass+'-content';
+        $("body")
+            .addClass('js-run')
+            .on( "click", toggleClass, function ( e ) {
+                e.preventDefault();
+                var $toggle = $(this),
+                    $parent = $toggle.parent();
+                if ($parent.is('.'+activeClass)) {
+                    $parent.removeClass(activeClass).find(contentClass).slideUp(slideSpeed);
+                } else {
+                    console.log($parent.addClass(activeClass).find(contentClass).length);
+                    $parent.addClass(activeClass).find(contentClass).slideDown(slideSpeed).parent().siblings('.'+activeClass).removeClass(activeClass).find(contentClass).stop().slideUp(slideSpeed);
+                }
+            } );
+        $( document ).ready( function() {
+            $( accordionClass ).not( '.'+activeClass ).find( contentClass ).hide();
+        } );
+    </script>
 	</body>
 </html>
