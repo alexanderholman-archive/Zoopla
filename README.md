@@ -17,3 +17,6 @@ Part 2 of 3 is available as release v2.0.0
 
 ## Part 3
 Part 3 of 3 is available as release v3.0.0
+
+## Final
+I have released another commit which include jquery within the repo v3.0.1
